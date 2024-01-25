@@ -21,4 +21,8 @@ class ExternalMessagingManager(
         "apns" -> this.apnsSender
         else -> this.fcmSender
     }
+
+    fun getLazySender(): LazyPushSenderInterface {
+        return this.fcmSender
+    }
 }
